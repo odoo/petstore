@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="product_category_pet" model="product.category">
+            <field name="parent_id" ref="product.product_category_all"/>
+            <field name="name">Pet Toys</field>
+        </record>
+
+        <record id="product_product_9" model="product.product">
+            <field name="name">Mice</field>
+            <field name="categ_id" ref="product_category_pet"/>
+            <field name="standard_price">10.0</field>
+            <field name="list_price">13.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+            <field name="image" type="base64" file="oepetstore/images/mice.jpg"/>
+        </record>
+
+
+        <record id="product_product_10" model="product.product">
+            <field name="name">Alligator</field>
+            <field name="categ_id" ref="product_category_pet"/>
+            <field name="standard_price">10.0</field>
+            <field name="list_price">13.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+            <field name="image" type="base64" file="oepetstore/images/alligator.jpg"/>
+        </record>
+
+        <record id="product_product_13" model="product.product">
+            <field name="name">Fish</field>
+            <field name="categ_id" ref="product_category_pet"/>
+            <field name="standard_price">10.0</field>
+            <field name="list_price">13.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+            <field name="image" type="base64" file="oepetstore/images/fish.jpg"/>
+        </record>
+
+        <record id="product_product_14" model="product.product">
+            <field name="name">Ball</field>
+            <field name="categ_id" ref="product_category_pet"/>
+            <field name="standard_price">10.0</field>
+            <field name="list_price">13.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+            <field name="image" type="base64" file="oepetstore/images/ball.jpg"/>
+        </record>
+
+        <record id="product_product_15" model="product.product">
+            <field name="name">Crazy Circle</field>
+            <field name="categ_id" ref="product_category_pet"/>
+            <field name="standard_price">10.0</field>
+            <field name="list_price">13.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+            <field name="image" type="base64" file="oepetstore/images/crazy_circle.jpg"/>
+        </record>
+
+    </data>
+</openerp>

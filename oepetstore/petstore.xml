@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="petstore_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/oepetstore/static/src/css/petstore.css"/>
+                <script type="text/javascript" src="/oepetstore/static/src/js/petstore.js"/>
+            </xpath>
+        </template>
+
+        <menuitem id="main_petstore_menu" name="Pet Store" />
+
+        <menuitem id="petstore_menu" name="Pet Store"
+            parent="main_petstore_menu" />
+
+        <record id="action_home_page" model="ir.actions.client">
+            <field name="name">Pet Store Home</field>
+            <field name="tag">petstore.homepage</field>
+        </record>
+
+        <menuitem id="home_page_petstore_menu" name="Home Page" parent="petstore_menu"
+            action="action_home_page"/>
+
+        <record model="ir.ui.view" id="message_of_the_day_tree">
+            <field name="name">message_of_the_day_tree</field>
+            <field name="model">oepetstore.message_of_the_day</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Message of the day">
+                    <field name="message"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="message_of_the_day_form">
+            <field name="name">message_of_the_day_form</field>
+            <field name="model">oepetstore.message_of_the_day</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Message of the day">
+                    <group>
+                        <field name="message" colspan="4"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="message_of_the_day_action">
+            <field name="name">Message of the day</field>
+            <field name="res_model">oepetstore.message_of_the_day</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="message_day" name="Message of the day" parent="petstore_menu"
+            action="message_of_the_day_action"/>
+
+        <record model="ir.actions.act_window" id="pet_toys_action">
+            <field name="name">Pet Toys</field>
+            <field name="res_model">product.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[["categ_id.name", "=", "Pet Toys"]]</field>
+        </record>
+
+        <record id="product_normal_form_view_inherit" model="ir.ui.view">
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="max_quantity"/>
+                </field>
+            </field>
+        </record>
+
+        <menuitem id="pet_toys_action_menu" name="Pet Toys" parent="petstore_menu"
+            action="pet_toys_action"/>
+    </data>
+</openerp>
